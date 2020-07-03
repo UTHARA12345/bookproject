@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg"></div>
+        <div class="col-lg">
+            <h1>Author</h1>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg"></div>
+        <div class="col-lg">
+        <form method="POST">
+            {% csrf_token %}
+            <table>
+            {% for author in form %}
+                <tr>
+                    <td>{{author.label_tag}}</td>
+                    <td>{{author}}</td>
+                    <td>{{author.errors}}</td>
+
+                </tr>
+                {% endfor %}
+
+
+            </table>
+
+
+           <input type="submit" class="btn btn-success" value="create">
+
+        </form>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+{% endblock %}

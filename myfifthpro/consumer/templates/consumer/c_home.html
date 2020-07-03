@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+{% extends 'consumer/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg"></div>
+        <div class="col-lg">
+            <h1>welcome</h1>
+        </div>
+        <div class="col-lg"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg">
+    {% for book in books%}
+
+    <div class="card" style="width: 18rem;">
+   <img src="..." class="card-img-top" alt="...">
+   <div class="card-body">
+    <h5 class="card-title">{{book.book_name}}</h5>
+
+    <p class="card-text"><strong>Price:{{book.price}}</strong></p>
+    <a href="{%url 'bkview' book.id%}" class="btn btn-primary">Buy Now</a>
+   </div>
+   </div>
+
+    {% endfor %}
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}

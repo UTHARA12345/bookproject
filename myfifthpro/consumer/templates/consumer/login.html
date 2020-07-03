@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'consumer/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg"></div>
+        <div class="col-lg">
+            <h1>Login</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="login">
+
+            </form>
+
+        </div>
+         <div class="col-lg"></div>
+
+    </div>
+</div>
+
+
+{% endblock %}
